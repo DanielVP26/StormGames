@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: gray ;
+    font-family: 'Roboto', sans-serif;
+}
+.iconCart{
+    position: relative;
+    margin-top: 3px;
+}
+.iconCart-Cart{
+    font-size: 3rem;
+}
+.iconCartNumber{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    line-height: 1.6em;
+    font-weight: bold;
+    width: 1.6em;
+}
+.header{
+    background-color: #000;
+    color: #fff;
+    padding-block: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    text-align: center;
+}
+.brandContainer{
+    display: flex;
+        align-items: center;
+        gap: 1rem;
+}
+.headerLogo{
+    width: 4rem;
+    transform: rotate(-0.13turn);
+}
+.neonText {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: "Sacramento", cursive;
+    color: #fff;
+    text-shadow:
+      0 0 21px rgb(137, 132, 132),
+      0 0 42px #3E065F,
+      0 0 82px #3E065F,
+      0 0 92px #3E065F,
+  }
+.navBar{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    & > ul{
+       display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #fff; 
+        & > a{
+            text-decoration: none;
+            background: #000; 
+            padding: 16px 20px;
+            border-radius: 100vmax; 
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            display: inline-block;
+            color: #fff;
+            -webkit-transition: all 0.45s;
+            transition: all 0.45s;
+            &:hover{
+                color: #fff;
+                scale: 1.1;
+            }
+            &::after{
+                content: "";
+                background: #3E065F;
+                position: absolute;
+                z-index: -1;
+                padding: 16px 20px;
+                display: block;
+                top: 0;
+                bottom: 0;
+                left: -100%;
+                right: 100%;
+                -webkit-transition: all 0.45s;
+                transition: all 0.45s;
+            }
+            &:hover::after{
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                -webkit-transition: all 0.45s;
+                transition: all 0.45s;
+            }
+        }
+    }
+}
+.main{
+    flex-grow: 1;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    }
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    background-color: #700B97;
+    background-color: #fff;
+    margin-block: 2rem;
+    width: 80%;
+    border-radius: 2rem;
+}
+
