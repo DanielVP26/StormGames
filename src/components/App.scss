@@ -11,7 +11,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: gray ;
+    background-color: #050404  ;
     font-family: 'Roboto', sans-serif;
 }
 .iconCart{
@@ -25,7 +25,7 @@ body{
     position: absolute;
     top: 0px;
     right: 0px;
-    background-color: rgb(255, 0, 0);
+    background-color: #5e0e8d;
     color: #fff;
     border-radius: 50%;
     font-size: 0.9rem;
@@ -34,7 +34,7 @@ body{
     width: 1.6em;
 }
 .header{
-    background-color: #000;
+    background-color:  #1c1b1c ;
     color: #fff;
     padding-block: 1rem;
     display: flex;
@@ -59,9 +59,6 @@ body{
     color: #fff;
     text-shadow:
       0 0 21px rgb(137, 132, 132),
-      0 0 42px #3E065F,
-      0 0 82px #3E065F,
-      0 0 92px #3E065F,
   }
 .navBar{
     display: flex;
@@ -74,7 +71,7 @@ body{
     color: #fff; 
         & > a{
             text-decoration: none;
-            background: #000; 
+            background:  #1c1b1c ; 
             padding: 16px 20px;
             border-radius: 100vmax; 
             position: relative;
@@ -115,21 +112,154 @@ body{
 }
 .main{
     flex-grow: 1;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
     font-family: 'Roboto', sans-serif;
     }
-.mainContainer{
+.mainBanner{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     text-align: center;
-    background-color: #700B97;
-    background-color: #fff;
-    margin-block: 2rem;
-    width: 80%;
+    background-color: #1c1b1c;
+    color: #fff;
+    margin: 2rem;
     border-radius: 2rem;
+    width: -webkit-fill-available;
 }
+
+.cardContainer{
+    padding-inline: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    margin-inline: 2rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color:  #1c1b1c ;
+    margin-block: 2rem;
+    width: 15rem;
+    border-radius: 2rem;
+    & > img{
+        width: 100%;
+        height: 17rem;
+        border-radius: 1rem;
+    }
+    & > h3{
+        font-weight: 500;
+        margin-top : 1rem;
+        color: #fff;
+        font-weight: bold;
+    }
+    & > p{
+        font-weight: 300;
+        color: #fff;
+        margin: 0;
+    }
+    & > .cardPrice{
+        font-weight: 300;
+        color: #b51af0 ;
+        margin: 0;
+        margin-top: 0.5em;
+    }
+    & > button{
+        background-color: #000;
+        color: #fff;
+        padding: 1rem;
+        margin-block: 1rem;
+        border-radius: 1rem;
+        border: none;
+        font-size: 1rem;
+        font-weight: 300;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        &:hover{
+            scale: 1.05;
+            background-color: #3E065F;
+        }
+    }
+}
+@media screen and (max-width: 1335px){
+    .cardContainer{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (max-width: 1090px){
+    .cardContainer{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 850px){
+    .navBar{
+        & > ul{
+            padding: 0;
+        }
+    }
+    .header{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .mainBanner{
+        > h1{
+            font-size: 1.5rem;
+        }
+    }
+    .cardContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 610px){
+    .navBar{
+        & > ul{
+            display: none;
+        }
+    }
+    .header{
+        flex-direction: row;
+    }
+    .cardContainer{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media screen and (max-width: 400px){
+    .mainBanner{
+        margin-inline: 0;
+    }
+    .headerLogo{
+        width: 3rem;
+    }
+    .neonText{
+        font-size: 1.5rem;
+    }
+    .iconCart-Cart{
+        font-size: 2rem;
+    }
+    .iconCartNumber{
+        font-size: 0.7rem;
+        line-height: 1.2em;
+        width: 1.2em;
+    }
+    .cardContainer{
+        padding-inline: 0;
+        margin-inline: 0;
+    }
+    .card{
+        width: 100%;
+        margin-block: 1rem;
+        & > img{
+            height: auto;
+        }
+    }
+}
+@media screen and (max-width: 350px){
+    .headerLogo{
+        display: none;
+    }
+}
+
+
 
