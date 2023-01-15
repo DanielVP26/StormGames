@@ -6,9 +6,13 @@ const NavBar = () => {
   return (
     <div className='navBar'>
           <ul>
-            <ButtonNavBar buttonTittle="Inicio" />
-            <ButtonNavBar buttonTittle="Nosotros" />
-            <ButtonNavBar buttonTittle="Contacto" />
+            <ButtonNavBar buttonTittle="Accion" btnPath="/categoria/Accion" />
+            <ButtonNavBar buttonTittle="Aventura" btnPath="/categoria/Aventura" />
+            <ButtonNavBar buttonTittle="FPS" btnPath="/categoria/FPS" />
+            <ButtonNavBar buttonTittle="Shooter" btnPath="/categoria/Shooter" />
+            <ButtonNavBar buttonTittle="Rol" btnPath="/categoria/Rol" />
+            <ButtonNavBar buttonTittle="Tercera persona" btnPath="/categoria/TerceraPersona" />
+            <ButtonNavBar buttonTittle="Mundo abierto" btnPath="/categoria/MundoAbierto" />
           </ul>
         <div className='iconCart'>
           <CartWidget/>

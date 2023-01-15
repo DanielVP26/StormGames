@@ -1,0 +1,133 @@
+{
+    "productos": [
+    { "id": 1, "nombre": "Assasin's Creed Unity", "precio": 1000, "img": "https://i.pinimg.com/originals/d4/13/28/d4132829ec446b9b849d21c4f1a62f13.jpg", "stock": 10, "descripcion": "París, 1789. La Revolución francesa convierte una ciudad espléndida en un lugar donde reinan el terror y el caos. Por sus calles adoquinadas corre la sangre de los plebeyos que osan alzarse contra la opresiva aristocracia.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "MundoAbierto"
+        ]} ,
+    { "id": 2, "nombre": "Cyberpunk 2077", "precio": 1000, "img": "https://media.vandal.net/m/20029/cyberpunk-2077-201961217172698_1.jpg", "stock": 10, "descripcion": "Cyberpunk 2077 es un RPG de mundo abierto ambientado en Night City, una megalópolis obsesionada con el poder, la tecnología y la modificación corporal. Te sumergirás en un juego de rol de acción y aventuras en el que interpretarás a un mercenario conocido como V, cuya vida se verá alterada por una conspiración que amenaza con destruir la ciudad.",
+    "categoria": [
+        "RPG",
+        "Accion",
+        "Aventura",
+        "MundoAbierto"
+        ] },
+    { "id": 3, "nombre": "Red Dead Redemption II", "precio": 1000, "img": "https://www.zurpusiangames.com/img/red_dead_redemption_II.jpg", "stock": 10, "descripcion": "Red Dead Redemption 2 es un videojuego de acción-aventura y mundo abierto desarrollado por Rockstar Studios y publicado por Rockstar Games. Es la secuela de Red Dead Redemption (2010) y la tercera entrega de la saga Red Dead.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "MundoAbierto"
+        ] },
+    { "id": 4, "nombre": "Elden Ring", "precio": 1000, "img": "https://cdn-prod.scalefast.com/public/assets/user/122595/image/fdadc3a24ebe6227423924e2c86ba174.jpg", "stock": 10, "descripcion": "Elden Ring es un videojuego de rol de acción y mundo abierto desarrollado por FromSoftware y publicado por Bandai Namco Entertainment. Es la primera colaboración entre el estudio japonés y el escritor George R. R. Martin, autor de la saga Canción de hielo y fuego.",
+    "categoria": [
+        "Rol",
+        "Accion"
+        ] },
+    { "id": 5, "nombre": "Escape from Tarkov", "precio": 1000, "img": "https://as01.epimg.net/meristation/imagenes/2018/07/01/game_cover/1530466372_466372_023589_gameplatform.jpg", "stock": 10, "descripcion": "Escape from Tarkov es un videojuego de disparos en primera persona desarrollado por Battlestate Games. El juego se desarrolla en la ciudad ficticia de Tarkov, Rusia, en un futuro cercano en el que la ciudad ha sido devastada por una guerra civil.",
+    "categoria": [
+        "Shooter",
+        "MMO",
+        "FPS",
+        "Accion"
+        ] },
+    { "id": 6, "nombre": "The Last of Us Remastered", "precio": 1000, "img": "https://static-cdn.jtvnw.net/ttv-boxart/1200871695_IGDB-272x380.jpg", "stock": 10, "descripcion": "The Last of Us Remastered es un videojuego de acción-aventura y supervivencia desarrollado por Naughty Dog y publicado por Sony Computer Entertainment. Es la versión remasterizada de The Last of Us (2013) para PlayStation 4.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "Terror"
+        ]
+ },
+    { "id": 7, "nombre": "The Last of Us Part II", "precio": 1000, "img": "https://as01.epimg.net/meristation/imagenes/2019/09/25/game_cover/183891271569432001.jpg", "stock": 10, "descripcion": "The Last of Us Part II es un videojuego de acción-aventura y supervivencia desarrollado por Naughty Dog y publicado por Sony Interactive Entertainment. Es la secuela de The Last of Us (2013) y la segunda entrega de la saga The Last of Us.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "Terror"
+        ] },
+    { "id": 8, "nombre": "Control" , "precio": 1000, "img": "https://as.com/meristation/imagenes/2020/08/13/game_cover/845676411597307198.jpg", "stock": 10, "descripcion": "Control es un videojuego de acción y aventuras desarrollado por Remedy Entertainment y publicado por 505 Games. Es la primera entrega de la saga Control.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "TerceraPersona"
+        ]},
+    { "id": 9, "nombre": "Death Stranding", "precio": 1000, "img": "https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Death_Stranding.jpg/220px-Death_Stranding.jpg", "stock": 10, "descripcion": "Death Stranding es un videojuego de acción y aventuras desarrollado por Kojima Productions y publicado por Sony Interactive Entertainment. Es la primera entrega de la saga Death Stranding.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "Shooter",
+        "TerceraPersona"
+        ] },
+    { "id": 10, "nombre": "Borderlands 2", "precio": 1000, "img": "https://i.3djuegos.com/juegos/7860/borderlands_2/fotos/ficha/borderlands_2-2148566.jpg", "stock": 10, "descripcion": "Borderlands 2 es un videojuego de disparos en primera persona y rol desarrollado por Gearbox Software y publicado por 2K Games. Es la secuela de Borderlands (2009) y la segunda entrega de la saga Borderlands.",
+    "categoria": [
+        "Accion",
+        "FPS",
+        "Rol"
+        ]
+ },
+    { "id": 11, "nombre": "Borderlands 3", "precio": 1000, "img": "https://store-images.s-microsoft.com/image/apps.40254.14379060370374720.47801139-64e6-4cf6-a197-13396a8111de.a99a7241-966f-4bff-82a5-4fde6c3c869c?w=400&h=600", "stock": 10, "descripcion": "Borderlands 3 es un videojuego de disparos en primera persona y rol desarrollado por Gearbox Software y publicado por 2K Games. Es la secuela de Borderlands 2 (2012) y la tercera entrega de la saga Borderlands.",
+    "categoria": [
+        "Accion",
+        "FPS",
+        "Rol"
+        ] },
+    { "id": 12, "nombre": "The Witcher 3", "precio": 1000, "img": "https://uvejuegos.com/img/caratulas/62984/The-Witcher-III-Wild-Hunt---Complete-Edition-Switch-EU.jpg", "stock": 10, "descripcion": "The Witcher 3: Wild Hunt es un videojuego de rol de acción desarrollado por CD Projekt RED y publicado por CD Projekt. Es la tercera entrega de la saga The Witcher y la secuela de The Witcher 2: Assassins of Kings (2011).",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "Rol",
+        "TerceraPersona",
+        "MundoAbierto"
+        ] },
+    {"id":13, "nombre": "Far Cry 6", "precio": 1000, "img": "https://cdn1.epicgames.com/b4565296c22549e4830c13bc7506642d/offer/TETRA_PREORDER_STANDARD%20EDITION_EPIC_Store_Portrait_1200x1600-1200x1600-ca8b802ff13813c37a44ebf68d0946a2.png", "stock": 10, "descripcion": "Far Cry 6 es un videojuego de acción y aventuras desarrollado por Ubisoft Montreal y publicado por Ubisoft. Es la sexta entrega de la saga Far Cry y la secuela de Far Cry 5 (2018).",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "FPS",
+        "Shooter",
+        "MundoAbierto"
+        ] },
+    { "id": 14, "nombre": "God of War IV", "precio": 1000, "img": "https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7", "stock": 10, "descripcion": "God of War es un videojuego de acción y aventuras desarrollado por Santa Monica Studio y publicado por Sony Interactive Entertainment. Es la octava entrega de la saga God of War y la secuela de God of War III (2010).",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "TerceraPersona"
+        ] },
+    { "id": 15, "nombre": "God of War Ragnarok", "precio": 1000, "img": "https://sm.ign.com/ign_br/game/g/god-of-war/god-of-war-ragnarok_z48t.jpg", "stock": 10, "descripcion": "God of War Ragnarok es un videojuego de acción y aventuras desarrollado por Santa Monica Studio y publicado por Sony Interactive Entertainment. Es la novena entrega de la saga God of War y la secuela de God of War (2018).",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "TerceraPersona"
+        ] },
+    { "id":16, "nombre": "Ghost of Tsushima", "precio": 1000, "img": "https://media.vandal.net/m/54017/ghost-of-tsushima-20203517513223_1.jpg", "stock": 10, "descripcion": "Ghost of Tsushima es un videojuego de acción y aventuras desarrollado por Sucker Punch Productions y publicado por Sony Interactive Entertainment. Es la primera entrega de la saga Ghost of Tsushima.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "Rol"
+        ] },
+    {"id":17, "nombre": "Horizon Zero Dawn", "precio": 1000, "img": "https://image.api.playstation.com/vulcan/img/rnd/202009/2923/jAT7HjpL49A62bU7hLKXJ96b.png", "stock": 10, "descripcion": "Horizon Zero Dawn es un videojuego de acción y aventuras desarrollado por Guerrilla Games y publicado por Sony Interactive Entertainment. Es la primera entrega de la saga Horizon Zero Dawn.",
+    "categoria": [
+        "Aventura",
+        "Rol",
+        "MundoAbierto",
+        "TerceraPersona"
+        ] },
+    {"id":18, "nombre": "Doom Eternal" , "precio": 1000, "img": "https://upload.wikimedia.org/wikipedia/en/9/9d/Cover_Art_of_Doom_Eternal.png", "stock": 10, "descripcion": "Doom Eternal es un videojuego de acción y disparos en primera persona desarrollado por id Software y publicado por Bethesda Softworks. Es la secuela de Doom (2016) y la quinta entrega de la saga Doom.",
+    "categoria": [
+        "Accion",
+        "FPS",
+        "Shooter"
+        ]},
+    {"id":19, "nombre": "Marvel's Spider-Man" , "precio": 1000, "img": "https://image.api.playstation.com/vulcan/img/rnd/202011/0714/vuF88yWPSnDfmFJVTyNJpVwW.png", "stock": 10, "descripcion": "Marvel's Spider-Man es un videojuego de acción y aventura basado en el popular superhéroe hómonimo de la editorial Marvel Comics. Fue desarrollado por Insomniac Games y publicado por Sony Interactive Entertainment en exclusiva para la consola PlayStation 4.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "TerceraPersona"
+        ]},
+    {"id":20, "nombre": "Spider-Man Miles Morales", "precio":1000, "img": "https://media.vandal.net/m/86451/spiderman-miles-morales-20207921133921_1.jpg", "stock": 10, "descripcion": "Marvel's Spider-Man: Miles Morales es un videojuego de acción y aventuras desarrollado por Insomniac Games y publicado por Sony Interactive Entertainment para PlayStation 4 y PlayStation 5. Está basado en el superhéroe de Marvel Comics Miles Morales.",
+    "categoria": [
+        "Accion",
+        "Aventura",
+        "TerceraPersona"
+        ]}
+    ]
+}

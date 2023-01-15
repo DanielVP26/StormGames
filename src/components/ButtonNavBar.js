@@ -1,8 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const ButtonNavBar = (props) => {
   return (
-    <a href={props.buttonTittle}>{props.buttonTittle}</a>
+      <NavLink to={props.btnPath}>{props.buttonTittle}</NavLink>
   )
 }
 

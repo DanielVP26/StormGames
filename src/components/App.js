@@ -1,11 +1,15 @@
 import Header from "./Header"
-import ItemListContainer from "./ItemListContainer";
 import './App.scss'
+import { BrowserRouter } from "react-router-dom";
+import Main from "./Main";
+
 function App() {
   return (
     <>
-    <Header/>
-    <ItemListContainer greeting="Daniel"/>
+      <BrowserRouter>
+        <Header/>
+        <Main/>
+      </BrowserRouter>
     </>
   );
 }
