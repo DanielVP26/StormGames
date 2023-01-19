@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const ButtonNavBar = (props) => {
+const ButtonNavBar = ({btnPath, buttonTittle, closeMenu}) => {
   return (
-      <NavLink to={props.btnPath}>{props.buttonTittle}</NavLink>
+      <NavLink to={btnPath} onClick={closeMenu} >{buttonTittle}</NavLink>
   )
 }
 

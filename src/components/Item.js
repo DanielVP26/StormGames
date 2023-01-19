@@ -1,21 +1,22 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import ButtonAddCart from './ButtonAddCart'
 
-function Item(props) {
+function Item({producto, img, name, price, id}) {
 
   return (
     <div className='card'>
       <div className='imageContainer' >
-        <img src={props.img} alt={props.name} className='image' />
+        <img src={img} alt={name} className='image' />
         <div className='textImgContainer'>
         <span className="material-icons textImgOverlay">favorite</span>
         </div>
       </div>
-        <h3>{props.name}</h3>
-        <h3 className='cardPrice'><b>${props.price}</b></h3>
+        <h3>{name}</h3>
+        <h3 className='cardPrice'><b>${price}</b></h3>
         <div className='btnCard'>
-          <button>Agregar al carrito</button>
-          <Link to={`/item/${props.id}`}>Ver más</Link>
+        <ButtonAddCart item={producto} />
+          <Link to={`/item/${id}`}>Ver más</Link>
         </div>
     </div>
   )

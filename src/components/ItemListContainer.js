@@ -5,17 +5,18 @@ import List from './List'
 const ItemListContainer = (props) => {
   const [data, setData] = useState([])
   const {categoryId} = useParams()
+  const url = "/products.json"
   useEffect(() => {
-    if(props.isAll){
-      fetch("/products.json")
+    if(!categoryId){
+      fetch(url)
       .then(res => res.json())
       .then(data => setData(data.productos) )
     }else{
-      fetch("/products.json")
+      fetch(url)
       .then(res => res.json())
       .then(data => setData(data.productos.filter(producto => producto.categoria.includes(categoryId))) )
     }
-  }, [props.isAll, categoryId])
+  }, [categoryId])
 
 
   return (

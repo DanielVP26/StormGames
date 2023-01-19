@@ -67,6 +67,9 @@ body{
     display: flex;
     align-items: center;
     gap: 3rem;
+    & > .navBarMobile{
+        display: none;
+    }
     & > ul{
        display: flex;
         align-items: center;
@@ -295,6 +298,7 @@ body{
                 cursor: pointer;
                 transition: all 0.3s ease;
                 border-radius: 100vmax;
+                user-select: none;
                 &:hover{
                     background: #b51af0;
                 }
@@ -340,7 +344,9 @@ body{
 .cartTittle{
     color: #fff;
 }
-
+.btnCloseMenu{
+    display: none;
+}
 
 //MEDIA QUERIES
 @media screen and (max-width: 1335px){
@@ -380,8 +386,54 @@ body{
 
 @media screen and (max-width: 610px){
     .navBar{
-        & > ul{
-            display: none;
+        flex-direction: row-reverse;
+        height: 5rem;
+        & > .navBarMobile{
+            display: block;
+            & >  button{
+                display: block;
+                cursor: pointer;
+                font-size: 2rem;
+                color: #fff;
+                background-color: transparent;
+                border: 0;
+            }
+        }
+        & > .aside{
+            position: fixed;
+            z-index: 9;
+            left: 0;
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.75);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            background-color: #1c1b1c;
+            margin: 0;
+            width: 50%;
+            padding: 1rem;
+            transform: translateX(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.6s ease;
+        }
+        & > .asideActive{
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            & > .btnCloseMenu{
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 2rem;
+                cursor: pointer;
+                color: #fff;
+                background-color: transparent;
+                border: none;
+            }
         }
     }
     .header{
