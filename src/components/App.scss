@@ -347,6 +347,54 @@ body{
 .btnCloseMenu{
     display: none;
 }
+.cart{
+    display: flex;
+    margin: 2rem;
+    gap: 2rem;
+    background-color: #1c1b1c;
+    border-radius: 2rem;
+    & > .cartProductos{
+        padding: 1rem;
+        & > ul{
+            padding-inline: 0;
+            & > .cartItem{
+                color: #fff;
+                list-style: none;
+                display: flex;
+                margin-block: 2rem;
+                & > img{
+                    width: 10rem;
+                    border-radius: 1rem;
+                }
+                & > .cartItemInfo{
+                    padding-inline: 2rem ;
+                    & > *{
+                        margin: 0;
+                        margin-top: 0.5rem;
+                    }
+                }
+                & > .cartBtnDelete{
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: center;
+                    margin-left: 1rem;
+                    & > button{
+                        background-color: transparent;
+                        font-size: 2rem;
+                        color: #fff;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    & > .cartGoToCheckOut{
+        width: 20%;
+            display: flex;
+            align-items: center;
+    }
+}
 
 //MEDIA QUERIES
 @media screen and (max-width: 1335px){

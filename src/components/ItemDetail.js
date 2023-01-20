@@ -25,9 +25,19 @@ const ItemDetail = ({item}) => {
             </h1>
             <h4 className='itemDetailInfo_Category'>
                 Generos: {item.categoria.map((cat) => {
-                    return (
-                        <span key={cat}>{cat} </span>
-                    )
+                    if(cat === 'MundoAbierto'){
+                        return (
+                            <span key={cat}>Mundo Abierto</span>
+                        )
+                      }else if(cat === 'TerceraPersona'){
+                        return (
+                            <span key={cat}>Tercer Persona</span>
+                        )
+                      }else{
+                        return (
+                            <span key={cat}>{cat} </span>
+                        )
+                      }
                 })
                 }
             </h4>

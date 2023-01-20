@@ -12,9 +12,18 @@ const CustomProvider = ({children}) => {
   const [totalProductos, setTotalProductos] = useState(0)
   const [carrito, setCarrito] = useState([])
 
-  const changeTotalProductos = (cantidad) => {
+  const addTotalProductos = (cantidad) => {
     setTotalProductos(totalProductos + cantidad)
   }
+
+  const removeTotalProductos = (cantidad) => {
+    setTotalProductos(totalProductos - cantidad)
+  }
+  const eliminarItem = (item) => {
+    const newCarrito = carrito.filter( e=> e.nombre !== item.nombre )
+    setCarrito(newCarrito)
+  }
+
   const changeCarrito = (item, count) => {
     if( !carrito.some( e=> e.nombre === item.nombre ) ){
       setCarrito([...carrito, item])
@@ -27,7 +36,9 @@ const CustomProvider = ({children}) => {
         carrito : carrito,
         changeCarrito : changeCarrito,
         totalProductos : totalProductos,
-        changeTotalProductos : changeTotalProductos
+        addTotalProductos : addTotalProductos,
+        eliminarItem : eliminarItem,
+        removeTotalProductos : removeTotalProductos
     }
 
   return (

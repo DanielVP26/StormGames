@@ -3,11 +3,11 @@ import {useCarrito} from './CustomProvider'
 
 
 const ButtonAddCart = ({item, count=1}) => {
-    const {changeTotalProductos, changeCarrito} = useCarrito()
+    const {addTotalProductos, changeCarrito} = useCarrito()
 
     item.cantidad = count
     const onAdd = ()=>{
-        changeTotalProductos(count)
+        addTotalProductos(count)
         changeCarrito(item, count)
     }
   return (
