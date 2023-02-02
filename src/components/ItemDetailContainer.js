@@ -1,27 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { useParams} from 'react-router-dom'
-import ItemDetail from './ItemDetail'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
+import { db } from "../firebase";
+import { collection, doc, getDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const ItemDetailContainer = () => {
-  const {itemId} = useParams()
-  const [productos, setProductos] = useState([])
-  const [item, setItem] = useState()
+  const { itemId } = useParams();
+  const [item, setItem] = useState();
   useEffect(() => {
-    fetch("/products.json")
-    .then(res => res.json())
-    .then(data => setProductos(data.productos) )
-  }, [])
-  useEffect(() => {
-    if(productos.length !== 0){
-      const itemSelect = productos.find(producto => producto.id === parseInt(itemId))
-      setItem(itemSelect)
-    }
-  }, [productos, itemId])
+    const productosCollection = collection(db, "productos");
+    const reference = doc(productosCollection, itemId);
+    const getProducts = getDoc(reference);
+    getProducts
+      .then((response) => {
+        const productos = response.data();
+        setItem(productos);
+      })
+      .catch(() => {
+        toast.error("No se pudo cargar el producto");
+      });
+  }, [itemId]);
   return (
     <>
-      <ItemDetail item={item}/>
+      <ItemDetail item={item} />
     </>
-  )
-}
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

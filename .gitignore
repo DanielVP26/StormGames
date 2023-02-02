@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /notes.txt
+/products.json
+/upload_foods.js
+/key_service_account.json

@@ -1,21 +1,15 @@
-import React from 'react'
-import ItemListContainer from "./ItemListContainer";
-import {Route, Routes} from "react-router-dom";
-import ItemDetailContainer from './ItemDetailContainer';
-import Cart from './Cart';
+import React from "react";
+import { ToastContainer } from "react-toastify";
+
+import AnimatedRoutes from "./AnimatedRoutes";
 
 const Main = () => {
-
   return (
     <main>
-        <Routes>
-            <Route path="/" element={<ItemListContainer greeting="Daniel" />}/>
-            <Route path="/categoria/:categoryId" element={<ItemListContainer greeting="Daniel" />}/>
-            <Route path="/item/:itemId" element={<ItemDetailContainer/>}/>
-            <Route path="/cart" element={<Cart/>}/>
-        </Routes>
+      <AnimatedRoutes />
+      <ToastContainer />
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
