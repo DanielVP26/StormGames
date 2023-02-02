@@ -32,6 +32,12 @@ const Step1 = () => {
           </div>
         );
       })}
+      <h1 className="cartTotalText">
+        Total:{" "}
+        {carrito
+          .map((item) => item.cantidad * item.precio)
+          .reduce((a, b) => a + b, 0)}
+      </h1>
     </motion.div>
   );
 };
