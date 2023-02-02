@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 import { useCarrito } from "../CustomProvider";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const Step3 = () => {
-  const { changeValueDelForm, datosDelForm } = useCarrito();
+  const { changeValueDelForm, datosDelForm, vaciarCarrito } = useCarrito();
 
   const addDateToForm = () => {
     const fecha = serverTimestamp();
@@ -23,9 +23,26 @@ const Step3 = () => {
     const purchase = datosDelForm;
     addDoc(purchaseCollection, purchase)
       .then((docRef) => {
-        toast.success("Compra realizada con éxito " + docRef.id);
+        vaciarCarrito();
+        toast.dismiss();
+        toast.success(
+          "Compra realizada con éxito, su ID de compra es: " + docRef.id,
+          {
+            position: toast.POSITION.BOTTOM_RIGHT,
+            autoClose: 4000,
+            closeOnClick: true,
+            hideProgressBar: false,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            transition: Slide,
+            role: "status",
+            theme: "dark",
+          }
+        );
+        vaciarCarrito();
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error("Error al realizar la compra");
       });
   };
