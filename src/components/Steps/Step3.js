@@ -4,10 +4,12 @@ import { Slide, toast } from "react-toastify";
 import { useCarrito } from "../CustomProvider";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Step3 = () => {
   const { changeValueDelForm, datosDelForm, vaciarCarrito } = useCarrito();
 
+  const navigate = useNavigate();
   const addDateToForm = () => {
     const fecha = serverTimestamp();
     datosDelForm.date = fecha;
@@ -25,11 +27,12 @@ const Step3 = () => {
       .then((docRef) => {
         vaciarCarrito();
         toast.dismiss();
+        navigate("/");
         toast.success(
           "Compra realizada con éxito, su ID de compra es: " + docRef.id,
           {
             position: toast.POSITION.BOTTOM_RIGHT,
-            autoClose: 4000,
+            autoClose: false,
             closeOnClick: true,
             hideProgressBar: false,
             pauseOnHover: false,
