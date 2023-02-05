@@ -1,10 +1,10 @@
 import React from "react";
-import { useCarrito } from "../CustomProvider";
+import { useCart } from "../CustomProvider";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Step1 = () => {
-  const { carrito } = useCarrito();
+  const { cart } = useCart();
 
   return (
     <motion.div
@@ -13,7 +13,7 @@ const Step1 = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      {carrito.map((item) => {
+      {cart.map((item) => {
         return (
           <div className="checkoutItemContainer" key={item.nombre}>
             <div className="checkoutItem" key={item.nombre}>
@@ -34,7 +34,7 @@ const Step1 = () => {
       })}
       <h1 className="cartTotalText">
         Total:{" "}
-        {carrito
+        {cart
           .map((item) => item.cantidad * item.precio)
           .reduce((a, b) => a + b, 0)}
       </h1>

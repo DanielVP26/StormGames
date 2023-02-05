@@ -12,11 +12,8 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode={"wait"}>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<ItemListContainer greeting="Daniel" />} />
-        <Route
-          path="/categoria/:categoryId"
-          element={<ItemListContainer greeting="Daniel" />}
-        />
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/categoria/:categoryId" element={<ItemListContainer />} />
         <Route path="/item/:itemId" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />

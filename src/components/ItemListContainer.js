@@ -6,31 +6,32 @@ import { motion } from "framer-motion";
 import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { toast } from "react-toastify";
+import Loader from "./Loader";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   const [data, setData] = useState([]);
   const { categoryId } = useParams();
 
   useEffect(() => {
-    const productosCollection = collection(db, "productos");
-    let filtro = query(productosCollection);
+    const productsCollection = collection(db, "productos");
+    let filtro = query(productsCollection);
     if (categoryId) {
       filtro = query(
-        productosCollection,
+        productsCollection,
         where("categoria", "array-contains", categoryId)
       );
     }
     const getProducts = getDocs(filtro);
     getProducts
       .then((response) => {
-        const productos = response.docs.map((doc) => ({
+        const products = response.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
         }));
-        productos.sort((a, b) => {
+        products.sort((a, b) => {
           return a.nombre.localeCompare(b.nombre);
         });
-        setData(productos);
+        setData(products);
       })
       .catch(() => {
         toast("No se pudieron cargar los productos");
@@ -47,10 +48,11 @@ const ItemListContainer = (props) => {
     >
       <div className="mainBanner">
         <h1>
-          Hola {props.greeting}, un placer verte de vuelta en <b>StorGames </b>{" "}
-          <br /> ¿Qué te gustaría llevar hoy?{" "}
+          Hola, un placer verte en <b>StorGames </b> <br /> ¿Qué te gustaría
+          llevar hoy?{" "}
         </h1>
       </div>
+      {data.length === 0 && <Loader />}
       <div className="cardContainer">
         <List productos={data} />
       </div>

@@ -1,17 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useCarrito } from "../CustomProvider";
+import { useCart } from "../CustomProvider";
 
 const Step2 = ({ handleNext }) => {
-  const { changeValueDelForm } = useCarrito();
+  const { changeValueOfForm } = useCart();
 
-  const añadirDireccion = (event) => {
+  const addDirection = (event) => {
     event.preventDefault();
     handleNext();
   };
 
   const handleChange = (e) => {
-    changeValueDelForm(e.target.name, e.target.value);
+    changeValueOfForm(e.target.name, e.target.value);
   };
 
   return (
@@ -21,7 +21,7 @@ const Step2 = ({ handleNext }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <form onSubmit={añadirDireccion}>
+      <form onSubmit={addDirection}>
         <label>Nombre y Apellido:</label>
         <input
           type="text"

@@ -1,22 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import { useCarrito } from "./CustomProvider";
+import { useCart } from "./CustomProvider";
 
 const CartWidget = () => {
-  const { totalProductos } = useCarrito();
+  const { totalProducts } = useCart();
 
   return (
     <>
       <SwitchTransition>
         <CSSTransition
           classNames="countChange"
-          key={totalProductos}
+          key={totalProducts}
           addEndListener={(node, done) =>
             node.addEventListener("transitionend", done, false)
           }
         >
-          <span className="iconCartNumber">{totalProductos}</span>
+          <span className="iconCartNumber">{totalProducts}</span>
         </CSSTransition>
       </SwitchTransition>
       <Link className="material-icons iconCart-Cart" to={"/cart"}>

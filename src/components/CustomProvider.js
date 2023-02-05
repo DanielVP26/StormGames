@@ -2,18 +2,18 @@ import React, { createContext, useState, useContext } from "react";
 import { useEffect } from "react";
 import { toast, Slide } from "react-toastify";
 
-export const contexto = createContext();
-const Provider = contexto.Provider;
+export const context = createContext();
+const Provider = context.Provider;
 
-export const useCarrito = () => {
-  const valorDelContexto = useContext(contexto);
-  return valorDelContexto;
+export const useCart = () => {
+  const contextValue = useContext(context);
+  return contextValue;
 };
 
 const CustomProvider = ({ children }) => {
-  const [totalProductos, setTotalProductos] = useState(0);
-  const [carrito, setCarrito] = useState([]);
-  const [datosDelForm, setDatosDelForm] = useState({
+  const [totalProducts, setTotalProducts] = useState(0);
+  const [cart, setCart] = useState([]);
+  const [formData, setFormData] = useState({
     name: "",
     address: "",
     country: "",
@@ -27,60 +27,60 @@ const CustomProvider = ({ children }) => {
     cvc: "",
     cardName: "",
     date: "",
-    carrito: [],
+    cart: [],
   });
 
-  let carritoString = localStorage.getItem("carrito");
-  let carritoParseado = JSON.parse(carritoString);
-  let totalProductosString = localStorage.getItem("totalProductos");
-  let totalProductosParseado = JSON.parse(totalProductosString);
+  let cartString = localStorage.getItem("cart");
+  let cartParseado = JSON.parse(cartString);
+  let totalProductsString = localStorage.getItem("totalProducts");
+  let totalProductsParse = JSON.parse(totalProductsString);
 
   useEffect(() => {
-    if (carritoParseado) {
-      setCarrito(carritoParseado);
+    if (cartParseado) {
+      setCart(cartParseado);
     }
-    if (totalProductosParseado) {
-      setTotalProductos(totalProductosParseado);
+    if (totalProductsParse) {
+      setTotalProducts(totalProductsParse);
     } else {
-      setTotalProductos(0);
+      setTotalProducts(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    let carritoString = JSON.stringify(carrito);
-    let totalProductosString = JSON.stringify(totalProductos);
-    localStorage.setItem("totalProductos", totalProductosString);
-    localStorage.setItem("carrito", carritoString);
-  }, [carrito, totalProductos]);
+    let cartString = JSON.stringify(cart);
+    let totalProductsString = JSON.stringify(totalProducts);
+    localStorage.setItem("totalProducts", totalProductsString);
+    localStorage.setItem("cart", cartString);
+  }, [cart, totalProducts]);
 
   useEffect(() => {
-    datosDelForm.carrito = carrito;
+    formData.cart = cart;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [carrito]);
+  }, [cart]);
 
-  const addTotalProductos = (cantidad) => {
-    setTotalProductos(totalProductos + cantidad);
+  const addTotalProducts = (cantidad) => {
+    setTotalProducts(totalProducts + cantidad);
   };
 
-  const changeValueDelForm = (name, value) => {
-    setDatosDelForm({
-      ...datosDelForm,
+  const changeValueOfForm = (name, value) => {
+    setFormData({
+      ...formData,
       [name]: value,
     });
   };
 
-  const removeTotalProductos = (cantidad) => {
-    setTotalProductos(totalProductos - cantidad);
+  const removeTotalProducts = (cantidad) => {
+    setTotalProducts(totalProducts - cantidad);
   };
-  const eliminarItem = (item) => {
-    const newCarrito = carrito.filter((e) => e.nombre !== item.nombre);
-    setCarrito(newCarrito);
+  const deleteItem = (item) => {
+    const newCart = cart.filter((e) => e.nombre !== item.nombre);
+    setCart(newCart);
   };
 
-  const vaciarCarrito = () => {
-    setCarrito([]);
-    setTotalProductos(0);
+  const emptyCart = () => {
+    setCart([]);
+    setTotalProducts(0);
     toast("Se vació el carrito", {
       position: toast.POSITION.BOTTOM_RIGHT,
       autoClose: 2000,
@@ -96,29 +96,29 @@ const CustomProvider = ({ children }) => {
     });
   };
 
-  const changeCarrito = (item, count) => {
-    if (!carrito.some((e) => e.nombre === item.nombre)) {
+  const changeCart = (item, count) => {
+    if (!cart.some((e) => e.nombre === item.nombre)) {
       item.cantidad = count;
-      setCarrito([...carrito, item]);
+      setCart([...cart, item]);
     } else {
-      carrito.find((e) => e.nombre === item.nombre).cantidad += count;
+      cart.find((e) => e.nombre === item.nombre).cantidad += count;
     }
   };
 
-  const valorDelContexto = {
-    carrito,
-    changeCarrito,
-    totalProductos,
-    addTotalProductos,
-    eliminarItem,
-    removeTotalProductos,
-    vaciarCarrito,
-    datosDelForm,
-    changeValueDelForm,
-    setDatosDelForm,
+  const contextValue = {
+    cart,
+    changeCart,
+    totalProducts,
+    addTotalProducts,
+    deleteItem,
+    removeTotalProducts,
+    emptyCart,
+    formData,
+    changeValueOfForm,
+    setFormData,
   };
 
-  return <Provider value={valorDelContexto}>{children}</Provider>;
+  return <Provider value={contextValue}>{children}</Provider>;
 };
 
 export default CustomProvider;

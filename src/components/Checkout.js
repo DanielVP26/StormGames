@@ -43,14 +43,13 @@ const Checkout = () => {
         {activeStep === 0 && <Step1 />}
         {activeStep === 1 && <Step2 handleNext={handleNext} />}
         {activeStep === 2 && <Step3 />}
-        {activeStep === 0 ? ( //Si es el primer paso, solo se muestra el botón de siguiente
+        {activeStep === 0 ? (
           <div className="buttonCheckoutContainer">
             <button className="material-icons btnCheckout" onClick={handleNext}>
               navigate_next
             </button>
           </div>
         ) : (
-          // si no, se muestran los dos botones
           <div className="buttonCheckoutContainer">
             <button
               className="material-icons btnCheckout"

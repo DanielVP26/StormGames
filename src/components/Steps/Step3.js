@@ -1,53 +1,73 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Slide, toast } from "react-toastify";
-import { useCarrito } from "../CustomProvider";
+import { useCart } from "../CustomProvider";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 
 const Step3 = () => {
-  const { changeValueDelForm, datosDelForm, vaciarCarrito } = useCarrito();
+  const { changeValueOfForm, formData, emptyCart } = useCart();
 
   const navigate = useNavigate();
   const addDateToForm = () => {
     const fecha = serverTimestamp();
-    datosDelForm.date = fecha;
+    formData.date = fecha;
   };
 
   const handleChange = (e) => {
-    changeValueDelForm(e.target.name, e.target.value);
+    changeValueOfForm(e.target.name, e.target.value);
   };
+  Confirm.init({
+    backgroundColor: "#1c1b1c",
+    titleColor: "#fff",
+    messageColor: "#fff",
+    okButtonBackground: "#5e0e8d",
+    okButtonColor: "#fff",
+    cancelButtonBackground: "#fff",
+    cancelButtonColor: "#000",
+    titleMaxLength: 100,
+  });
   const confirmPurchase = (event) => {
     event.preventDefault();
-    addDateToForm();
-    const purchaseCollection = collection(db, "purchases");
-    const purchase = datosDelForm;
-    addDoc(purchaseCollection, purchase)
-      .then((docRef) => {
-        vaciarCarrito();
-        toast.dismiss();
-        navigate("/");
-        toast.success(
-          "Compra realizada con éxito, su ID de compra es: " + docRef.id,
-          {
-            position: toast.POSITION.BOTTOM_RIGHT,
-            autoClose: false,
-            closeOnClick: true,
-            hideProgressBar: false,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            transition: Slide,
-            role: "status",
-            theme: "dark",
-          }
-        );
-        vaciarCarrito();
-      })
-      .catch(() => {
-        toast.error("Error al realizar la compra");
-      });
+    Confirm.show(
+      "¿Está seguro que desea realizar la compra?",
+      "Si confirma, no podrá deshacer la acción",
+      "Confirmar",
+      "Cancelar",
+      () => {
+        addDateToForm();
+        const purchaseCollection = collection(db, "purchases");
+        const purchase = formData;
+        addDoc(purchaseCollection, purchase)
+          .then((docRef) => {
+            emptyCart();
+            toast.dismiss();
+            navigate("/");
+            toast.success(
+              "Compra realizada con éxito, su ID de compra es: " + docRef.id,
+              {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: false,
+                closeOnClick: false,
+                hideProgressBar: false,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                transition: Slide,
+                role: "status",
+                theme: "dark",
+              }
+            );
+            emptyCart();
+          })
+          .catch(() => {
+            toast.error("Error al realizar la compra");
+          });
+      },
+      () => {}
+    );
   };
 
   return (

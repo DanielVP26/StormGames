@@ -1,14 +1,14 @@
 import React from "react";
-import { useCarrito } from "./CustomProvider";
+import { useCart } from "./CustomProvider";
 import { toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ButtonAddCart = ({ item, count = 1 }) => {
-  const { addTotalProductos, changeCarrito } = useCarrito();
+  const { addTotalProducts, changeCart } = useCart();
 
   const onAdd = () => {
-    addTotalProductos(count);
-    changeCarrito(item, count);
+    addTotalProducts(count);
+    changeCart(item, count);
     toast(`Se agregaron ${count} ${item.nombre} al carrito`, {
       position: toast.POSITION.BOTTOM_RIGHT,
       autoClose: 2000,
@@ -23,11 +23,7 @@ const ButtonAddCart = ({ item, count = 1 }) => {
       theme: "dark",
     });
   };
-  return (
-    <>
-      <button onClick={onAdd}>Agregar al carrito</button>
-    </>
-  );
+  return <button onClick={onAdd}>Agregar al carrito</button>;
 };
 
 export default ButtonAddCart;
