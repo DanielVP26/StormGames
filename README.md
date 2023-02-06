@@ -72,8 +72,6 @@ $ yarn start
 
 - **Notiflix**: Es una biblioteca que permite mostrar notificaciones personalizables y elegantes en tu aplicación React.
 
-- **React**: Es un marco de JavaScript para construir aplicaciones web.
-
 - **React router dom**: Es una biblioteca que permite la navegación entre componentes de React, fue utilizada para las rutas para la navegación de la página.
 
 - **React-stepper-horizontal**: Es una biblioteca que permite crear un componente de React que muestra un paso a paso horizontal, fue utilizada para la navegación de la página de checkout.
