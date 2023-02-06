@@ -114,7 +114,7 @@ const Cart = () => {
               Vaciar Carrito
             </button>
             <h1 className="cartTotalText">
-              Total:{" "}
+              Total: $
               {cart
                 .map((item) => item.cantidad * item.precio)
                 .reduce((a, b) => a + b, 0)}

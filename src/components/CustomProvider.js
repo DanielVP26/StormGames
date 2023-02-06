@@ -41,8 +41,6 @@ const CustomProvider = ({ children }) => {
     }
     if (totalProductsParse) {
       setTotalProducts(totalProductsParse);
-    } else {
-      setTotalProducts(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

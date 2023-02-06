@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# **StormGames**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+StormGames es una tienda en línea de videojuegos que ofrece una amplia variedad de títulos para diversas plataformas. La página web de StormGames es intuitiva y fácil de navegar, permitiendo a los usuarios buscar y comprar juegos con pocos clics.
 
-## Available Scripts
+Características principales:
 
-In the project directory, you can run:
+- Catálogo de juegos completo y actualizado, con títulos para PC, consolas de juegos y dispositivos móviles.
 
-### `npm start`
+- Interfaz de usuario amigable con filtros para encontrar fácilmente el juego deseado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Proceso de compra seguro y sencillo, con opciones de pago variadas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+StormGames se esfuerza por brindar la mejor experiencia de compra a sus clientes, ofreciendo una amplia selección de juegos a precios competitivos y un servicio excepcional. ¡Visítanos en [StormGames](https://reactproject-danielvillega.vercel.app/) para descubrir tu próximo juego favorito!
 
-### `npm test`
+## **Uso e instalación:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Asegúrate de tener instaladas las últimas versiones de Node.js y npm en tu computadora.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Clona el repositorio en tu computadora local usando el siguiente comando en la terminal:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ git clone https://github.com/DanielVP26/reactproject_danielvillega.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+3. Accede a la carpeta del proyecto clonado:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+$ cd reactproject_danielvillega
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Instala las dependencias necesarias usando npm o yarn:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+$ npm install
+```
 
-## Learn More
+ó
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+$ yarn
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+5. Arranca el servidor de desarrollo:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+$ npm start
+```
 
-### Analyzing the Bundle Size
+ó
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+$ yarn start
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## **Tecnologías utilizadas:**
 
-### Advanced Configuration
+- **Firebase**: Fue utilizada para la base de datos de la aplicación.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Firebase admin**: Es una biblioteca que permite acceder a los servicios de Firebase desde el lado del servidor, es utilizado por los desarrolladores para futuras actualizaciones de catalogo.
 
-### Deployment
+- **Framer Motion**: Es una biblioteca de animaciones para React que te permite crear animaciones de alta calidad de forma sencilla, se utilizó para algunas animaciones y transiciones.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Notiflix**: Es una biblioteca que permite mostrar notificaciones personalizables y elegantes en tu aplicación React.
 
-### `npm run build` fails to minify
+- **React**: Es un marco de JavaScript para construir aplicaciones web.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React router dom**: Es una biblioteca que permite la navegación entre componentes de React, fue utilizada para las rutas para la navegación de la página.
+
+- **react-stepper-horizontal**: Es una biblioteca que permite crear un componente de React que muestra un paso a paso horizontal, fue utilizada para la navegación de la página de checkout.
+
+- **react-toastify**: Es una biblioteca que permite mostrar notificaciones, fue utilizada para mostrar notificaciones para el usuario.
+
+- **react-transition-group**: Es una biblioteca que permite crear transiciones entre componentes en tu aplicación React, fue utilizada para algunas animaciones y transiciones al igual que "Framer Motion".
+
+- **SASS**: Es un preprocesador de hojas de estilo que te permite escribir CSS de forma más avanzada y organizada.

@@ -21,8 +21,8 @@ const NavBar = () => {
           close
         </button>
         <ButtonNavBar
-          buttonTittle="Accion"
-          btnPath="/categoria/Accion"
+          buttonTittle="Acción"
+          btnPath="/categoria/Acción"
           closeMenu={closeMenu}
         />
         <ButtonNavBar

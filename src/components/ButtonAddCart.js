@@ -9,7 +9,8 @@ const ButtonAddCart = ({ item, count = 1 }) => {
   const onAdd = () => {
     addTotalProducts(count);
     changeCart(item, count);
-    toast(`Se agregaron ${count} ${item.nombre} al carrito`, {
+    const verb = count > 1 ? "agregaron" : "agregó";
+    toast(`Se ${verb} ${count} ${item.nombre} al carrito`, {
       position: toast.POSITION.BOTTOM_RIGHT,
       autoClose: 2000,
       closeOnClick: true,
