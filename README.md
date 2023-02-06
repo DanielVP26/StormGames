@@ -66,7 +66,7 @@ $ yarn start
 
 - **Firebase**: Fue utilizada para la base de datos de la aplicación.
 
-- **Firebase admin**: Es una biblioteca que permite acceder a los servicios de Firebase desde el lado del servidor, es utilizado por los desarrolladores para futuras actualizaciones de catRlogo.
+- **Firebase admin**: Es una biblioteca que permite acceder a los servicios de Firebase desde el lado del servidor, es utilizado por los desarrolladores para futuras actualizaciones de catálogo.
 
 - **Framer Motion**: Es una biblioteca de animaciones para React que te permite crear animaciones de alta calidad de forma sencilla, se utilizó para algunas animaciones y transiciones.
 
