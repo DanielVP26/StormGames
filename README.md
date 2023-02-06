@@ -10,7 +10,7 @@ Características principales:
 
 - Proceso de compra seguro y sencillo, con opciones de pago variadas.
 
-StormGames se esfuerza por brindar la mejor experiencia de compra a sus clientes, ofreciendo una amplia selección de juegos a precios competitivos y un servicio excepcional. ¡Visítanos en [StormGames](https://reactproject-danielvillega.vercel.app/) para descubrir tu próximo juego favorito!
+StormGames se esfuerza por brindar la mejor experiencia de compra a sus clientes, ofreciendo una amplia selección de juegos a precios competitivos y un servicio excepcional. ¡Visítanos en [**StormGames**](https://reactproject-danielvillega.vercel.app/) para descubrir tu próximo juego favorito!
 
 ## **Uso e instalación:**
 
