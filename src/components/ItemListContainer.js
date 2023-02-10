@@ -4,7 +4,7 @@ import List from "./List";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
 import { db } from "../firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { toast } from "react-toastify";
 import Loader from "./Loader";
 
@@ -14,12 +14,15 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const productsCollection = collection(db, "productos");
-    let filtro = query(productsCollection);
+    let filtro;
     if (categoryId) {
       filtro = query(
         productsCollection,
-        where("categoria", "array-contains", categoryId)
+        where("categoria", "array-contains", categoryId),
+        orderBy("nombre")
       );
+    } else {
+      filtro = query(productsCollection, orderBy("nombre"));
     }
     const getProducts = getDocs(filtro);
     getProducts
@@ -28,9 +31,6 @@ const ItemListContainer = () => {
           ...doc.data(),
           id: doc.id,
         }));
-        products.sort((a, b) => {
-          return a.nombre.localeCompare(b.nombre);
-        });
         setData(products);
       })
       .catch(() => {

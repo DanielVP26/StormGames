@@ -13,22 +13,7 @@ export const useCart = () => {
 const CustomProvider = ({ children }) => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [cart, setCart] = useState([]);
-  const [formData, setFormData] = useState({
-    name: "",
-    address: "",
-    country: "",
-    city: "",
-    state: "",
-    zip: "",
-    phone: "",
-    email: "",
-    cardNumber: "",
-    expirationDate: "",
-    cvc: "",
-    cardName: "",
-    date: "",
-    cart: [],
-  });
+  const [formData, setFormData] = useState({});
 
   let cartString = localStorage.getItem("cart");
   let cartParseado = JSON.parse(cartString);
@@ -41,6 +26,8 @@ const CustomProvider = ({ children }) => {
     }
     if (totalProductsParse) {
       setTotalProducts(totalProductsParse);
+    } else {
+      setTotalProducts(0);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
