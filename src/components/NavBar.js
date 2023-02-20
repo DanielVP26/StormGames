@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import CartWidget from "./CartWidget";
 import ButtonNavBar from "./ButtonNavBar";
 
 const NavBar = () => {
+  const [menu, setMenu] = useState(false);
+
   const openMenu = () => {
-    document.querySelector(".aside").classList.add("asideActive");
+    setMenu(true);
   };
   const closeMenu = () => {
-    document.querySelector(".aside").classList.remove("asideActive");
+    setMenu(false);
   };
   return (
     <div className="navBar">
@@ -16,7 +18,7 @@ const NavBar = () => {
           menu
         </button>
       </div>
-      <ul className="aside ">
+      <ul className={`aside ${menu ? "asideActive" : ""}`}>
         <button className="material-icons btnCloseMenu" onClick={closeMenu}>
           close
         </button>
